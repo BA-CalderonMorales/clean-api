@@ -4,7 +4,6 @@
  * Defines the interface for making API requests.
  */
 export interface APIClient {
-
 	/**
 	 * Make an API request.
 	 * @param options - The request options including url, method, and optional data.
@@ -14,7 +13,6 @@ export interface APIClient {
 		method: string;
 		data?: any;
 	}): Promise<T>;
-
 }
 
 /**
@@ -22,7 +20,6 @@ export interface APIClient {
  * Default implementation of APIClient using the Fetch API.
  */
 export class FetchClient implements APIClient {
-
 	/**
 	 * Make an API request using fetch.
 	 * @param options - The request options including url, method, and optional data.
