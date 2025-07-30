@@ -24,14 +24,28 @@ export interface APIRequest {
 }
 
 /**
- * Structure for an API response.
- * @template T - The type of the response data.
- * @property data - The response data.
- * @property status - The HTTP status code.
+ * APIResponse
+ * Structure for a raw HTTP API response.
+ *
+ * Use this to represent the actual HTTP response from the server, including status code and data.
+ * This is different from APIResult, which is designed for ergonomic client usage.
  */
 export interface APIResponse<T = any> {
-	/** The response data. */
-	data: T;
-	/** The HTTP status code. */
-	status: number;
+  /** The response data. */
+  data: T;
+  /** The HTTP status code. */
+  status: number;
 }
+
+/**
+ * APIResult
+ * Generic type for ergonomic API client results.
+ *
+ * Use this as the return type for your API client methods.
+ * It allows consumers to easily destructure `{ data, error }` from the result:
+ *
+ *   const { data, error } = await api.someMethod();
+ *
+ * This pattern is different from APIResponse, which represents the raw HTTP response.
+ */
+export type APIResult<T> = Promise<{ data?: T; error?: Error }>;

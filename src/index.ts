@@ -9,5 +9,5 @@
 export { API } from "./API";
 export { APIBase } from "./APIBase";
 export { APIClient, FetchClient } from "./APIClient";
-export { HTTPMethod, APIRequest, APIResponse } from "./APITypes";
 export { APIError } from "./APIError";
+export { HTTPMethod, APIRequest, APIResponse, APIResult } from "./APITypes";
