@@ -31,10 +31,10 @@ export interface APIRequest {
  * This is different from APIResult, which is designed for ergonomic client usage.
  */
 export interface APIResponse<T = any> {
-  /** The response data. */
-  data: T;
-  /** The HTTP status code. */
-  status: number;
+	/** The response data. */
+	data: T;
+	/** The HTTP status code. */
+	status: number;
 }
 
 /**
