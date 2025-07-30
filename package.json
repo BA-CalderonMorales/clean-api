@@ -1,6 +1,6 @@
 {
 	"name": "@ba-calderonmorales/clean-api",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Don't over-think the API layer in frontend code. Leverage this package to easily scale your projects.",
 	"main": "index.ts",
 	"scripts": {

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2025-07-30
+
+### Changed
+- Version bump to test npm registry update and proper version tagging
+- Validation of semantic versioning workflow
+- Verification of automated release process
+
+### Technical
+- Test npm package version synchronization
+- Validate git tag and npm registry consistency
+- Confirm proper version management workflow
+
 ## [0.0.1] - 2025-07-30
 
 ### Added
@@ -59,5 +71,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Testing strategies and mock implementations
 - Contributing guidelines and code of conduct
 
-[unreleased]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.1...HEAD
+[unreleased]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/BA-CalderonMorales/clean-api/releases/tag/v0.0.1
