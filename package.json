@@ -1,0 +1,49 @@
+{
+	"name": "clean-api",
+	"version": "0.0.1",
+	"description": "Don't over-think the API layer in frontend code. Leverage this package to easily scale your projects.",
+	"main": "index.ts",
+	"scripts": {
+		"test": "vitest",
+		"format": "biome format .",
+		"lint": "biome lint ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BA-CalderonMorales/clean-api.git"
+	},
+	"keywords": [
+		"api",
+		"frontend",
+		"typescript",
+		"http",
+		"fetch",
+		"rest",
+		"client",
+		"library",
+		"framework-agnostic",
+		"universal",
+		"react",
+		"vue",
+		"angular",
+		"svelte",
+		"nextjs",
+		"nuxt",
+		"web",
+		"data-fetching",
+		"api-client",
+		"api-layer",
+		"scalable",
+		"modular",
+		"clean-architecture"
+	],
+	"author": "Brandon A. Calderon-Morales",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/BA-CalderonMorales/clean-api/issues"
+	},
+	"homepage": "https://github.com/BA-CalderonMorales/clean-api#readme",
+	"devDependencies": {
+		"@biomejs/biome": "^2.1.3"
+	}
+}
