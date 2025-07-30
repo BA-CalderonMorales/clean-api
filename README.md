@@ -308,7 +308,7 @@ runExamples();
 
 </details>
 
----
+<br/>
 
 # Motivation and Benefits
 
