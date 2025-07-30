@@ -14,26 +14,77 @@ APIError.ts - Custom error class for handling API-related errors safely and cons
 ```
 
 
+
 # How to use
+
+## Adding API Buckets
+
+<details>
+
+<summary>You can organize your API endpoints into buckets using the `API` class:</summary>
+
+```typescript
+
+import { API } from 'clean-api';
+
+const userAPI = new API('users');
+const productAPI = new API('products');
+
+```
+
+</details>
+
+## Adding Routes and Configurations
+
+<details>
+
+<summary>Use the <code>APIBase</code> class to add routes and custom configurations:</summary>
+
+```typescript
+
+import { APIBase } from 'clean-api';
+
+const apiBase = new APIBase();
+
+apiBase.addRoute('getUser', '/users/:id');
+apiBase.setConfig('timeout', 5000);
+
+console.log(apiBase.routes); // { getUser: '/users/:id' }
+console.log(apiBase.config); // { timeout: 5000 }
+
+```
+
+</details>
+
 
 ## Handling API Errors
 
-You can use the `APIError` class to throw and catch errors in a consistent way:
+<details>
+
+<summary>You can use the <code>APIError</code> class to throw and catch errors in a consistent way:</summary>
 
 ```typescript
+
 import { APIError } from 'clean-api';
 
 try {
-  // ... your API call logic
-  throw new APIError('Request failed', { status: 404, data: { message: 'Not found' } });
+
+    // ... your API call logic
+    throw new APIError('Request failed', { status: 404, data: { message: 'Not found' } });
+
 } catch (error) {
-  if (error instanceof APIError) {
-    console.error('API error:', error.status, error.data);
-  } else {
-    // handle other errors
-  }
+
+    if (error instanceof APIError) {
+        console.error('API error:', error.status, error.data);
+    } else {
+        // handle other errors
+    }
+
 }
+
 ```
+
+</details>
 
 # Why is this being made?
 
