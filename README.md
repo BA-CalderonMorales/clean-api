@@ -2,8 +2,36 @@
 
 Don't over-think the API layer in frontend code. Leverage this package to easily scale your projects.
 
-# Architecture
+# Quick Start
 
+## Installation
+
+```bash
+# Using npm
+npm install @ba-calderonmorales/clean-api
+
+# Using yarn
+yarn add @ba-calderonmorales/clean-api
+
+# Using pnpm
+pnpm add @ba-calderonmorales/clean-api
+```
+
+## Basic Usage
+
+```typescript
+import { APIBase, APIError, APIResult } from '@ba-calderonmorales/clean-api';
+
+// Set up your API base with routes
+const api = new APIBase();
+api.addRoute('getUsers', '/users');
+api.addRoute('createUser', '/users');
+
+// Use in your application
+console.log(api.routes.getUsers); // '/users'
+```
+
+# Architecture
 
 ```
 API.ts - Provides a way to keep APIs structured to a particular bucket.
@@ -23,7 +51,7 @@ APIError.ts - Custom error class for handling API-related errors safely and cons
 
 ```typescript
 
-import { API } from 'clean-api';
+import { API } from '@ba-calderonmorales/clean-api';
 
 const userAPI = new API('users');
 const productAPI = new API('products');
@@ -40,7 +68,7 @@ const productAPI = new API('products');
 
 ```typescript
 
-import { APIBase } from 'clean-api';
+import { APIBase } from '@ba-calderonmorales/clean-api';
 
 const apiBase = new APIBase();
 
@@ -63,7 +91,7 @@ console.log(apiBase.config); // { timeout: 5000 }
 
 ```typescript
 
-import { APIError } from 'clean-api';
+import { APIError } from '@ba-calderonmorales/clean-api';
 
 try {
 
@@ -93,7 +121,7 @@ try {
 
 ```typescript
 
-import { APIBase, APIError, HTTPMethod, APIResult } from 'clean-api';
+import { APIBase, APIError, HTTPMethod, APIResult } from '@ba-calderonmorales/clean-api';
 
 // Define the shape of a Todo item
 type Todo = {
