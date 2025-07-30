@@ -4,17 +4,36 @@ Don't over-think the API layer in frontend code. Leverage this package to easily
 
 # Architecture
 
+
 ```
 API.ts - Provides a way to keep APIs structured to a particular bucket.
 APIBase.ts - Provides a layer to which you can add routes and one-off configurations.
 APIClient.ts - Provides a layer to which you can swap out clients at any point.
-
 APITypes.ts - Provides an easy way to tap into the types for this library.
+APIError.ts - Custom error class for handling API-related errors safely and consistently.
 ```
+
 
 # How to use
 
-TBD - Working on an NPM Package for this
+## Handling API Errors
+
+You can use the `APIError` class to throw and catch errors in a consistent way:
+
+```typescript
+import { APIError } from 'clean-api';
+
+try {
+  // ... your API call logic
+  throw new APIError('Request failed', { status: 404, data: { message: 'Not found' } });
+} catch (error) {
+  if (error instanceof APIError) {
+    console.error('API error:', error.status, error.data);
+  } else {
+    // handle other errors
+  }
+}
+```
 
 # Why is this being made?
 
