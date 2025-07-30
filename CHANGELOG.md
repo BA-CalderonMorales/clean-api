@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2025-07-30
+
+### Added
+- **JavaScript Distribution**: Added compiled JavaScript files for CommonJS and ESM
+- **Build Process**: Implemented TypeScript compilation pipeline
+- **Dual Package Support**: CommonJS (`dist/index.js`) and ESM (`dist/index.esm.js`) builds
+- **Type Declarations**: Generated TypeScript declaration files (`dist/index.d.ts`)
+- **Zero-Config JavaScript Usage**: JavaScript users can now import without TypeScript setup
+
+### Changed
+- **Package Entry Points**: Updated `main`, `module`, and `types` fields in package.json
+- **Export Maps**: Added proper `exports` configuration for dual package support
+- **Build Scripts**: Added `build`, `build:clean`, `build:tsc`, `build:esm` scripts
+- **Pre-publish Hook**: Added `prepublishOnly` script to ensure builds before publishing
+- **Version Bump**: Updated to 0.0.3 for JavaScript compatibility release
+
+### Fixed
+- **JavaScript User Experience**: Resolved issue where JavaScript users couldn't import the package
+- **Type Export Issues**: Fixed isolated modules TypeScript compilation errors
+- **Module Resolution**: Improved package resolution for both Node.js and bundlers
+
+### Technical
+- Added TypeScript as dev dependency for build process
+- Created `tsconfig.json` for build configuration
+- Updated exports to follow Node.js package standards
+- Added JavaScript compatibility testing
+
+### Breaking Changes
+- None - this is a compatible enhancement that maintains all existing functionality
+
 ## [0.0.2] - 2025-07-30
 
 ### Changed
@@ -71,6 +101,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Testing strategies and mock implementations
 - Contributing guidelines and code of conduct
 
-[unreleased]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.2...HEAD
+[unreleased]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/BA-CalderonMorales/clean-api/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/BA-CalderonMorales/clean-api/releases/tag/v0.0.1

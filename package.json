@@ -1,9 +1,29 @@
 {
 	"name": "@ba-calderonmorales/clean-api",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Don't over-think the API layer in frontend code. Leverage this package to easily scale your projects.",
-	"main": "index.ts",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE",
+		"CHANGELOG.md"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.esm.js",
+			"require": "./dist/index.js"
+		}
+	},
 	"scripts": {
+		"build": "npm run build:clean && npm run build:tsc && npm run build:esm",
+		"build:clean": "rm -rf dist",
+		"build:tsc": "tsc",
+		"build:esm": "tsc --module esnext --outDir dist/esm && mv dist/esm/index.js dist/index.esm.js && rm -rf dist/esm",
+		"prepublishOnly": "npm run test && npm run build",
 		"test": "vitest",
 		"test:run": "vitest run",
 		"test:coverage": "vitest run --coverage",
@@ -52,6 +72,7 @@
 		"@types/node": "^24.1.0",
 		"@vitest/coverage-v8": "^3.2.4",
 		"jsdom": "^26.1.0",
+		"typescript": "^5.8.3",
 		"vitest": "^3.2.4"
 	}
 }
